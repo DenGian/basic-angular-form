@@ -16,8 +16,9 @@ In addition, it includes building user-friendly interfaces and efficiently prese
 Thus, a Front-end Framework is a platform/tool to build the front end of your website.  
 Some tasks one can perform using a Front-end Framework are – the management of AJAX requests, associating data with The Document object Model (DOM) elements, defining a file structure, and styling of components on the website or application.
 
-## Top 4 frameworks for *large applications*
+## What are the best frameworks for *large applications*?
 
+### Frameworks 
 1. Angular
 2. React
 3. Vue
