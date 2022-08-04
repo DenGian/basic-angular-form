@@ -1,6 +1,6 @@
 {{ friendModel | json }}
 
-<form #friendbookForm="ngForm">
+<form #friendbookForm="ngForm" novalidate (ngSubmit)="submitForm()">
   <label for="fname">First name:</label><br>
   <input type="text" id="fname" name="fname" [(ngModel)]="friendModel._firstName" #firstName="ngModel"
          required [class.invalid]="firstName.invalid && firstName.touched" pattern="[a-zA-Z]*"><br>
@@ -35,5 +35,5 @@
       <option value="TypeScripting in Notepad using type any">TypeScripting in Notepad using type any</option>
     </optgroup>
   </select><br>
-  <button type="submit">Submit</button>
+  <button [disabled]="friendbookForm.form.invalid">Submit</button>
 </form>
