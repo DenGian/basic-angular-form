@@ -2,15 +2,20 @@
 
 <form #friendbookForm="ngForm">
   <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" [(ngModel)]="friendModel._firstName" #firstName="ngModel"><br>
+  <input type="text" id="fname" name="fname" [(ngModel)]="friendModel._firstName" #firstName="ngModel"
+         required [class.invalid]="firstName.invalid && firstName.touched" pattern="[a-zA-Z]*"><br>
   <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" [(ngModel)]="friendModel._lastName" #lastName="ngModel"><br>
+  <input type="text" id="lname" name="lname" [(ngModel)]="friendModel._lastName" #lastName="ngModel"
+         required [class.invalid]="lastName.invalid && lastName.touched" pattern="[a-zA-Z]*"><br>
   <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email" [(ngModel)]="friendModel._email" #email="ngModel"><br>
+  <input type="text" id="email" name="email" [(ngModel)]="friendModel._email" #email="ngModel"
+         required [class.invalid]="email.invalid && email.touched" [email]="true"><br>
   <label for="phone">Phone number:</label><br>
-  <input type="text" id="phone" name="phone" [(ngModel)]="friendModel._phoneNumber" #phoneNumber="ngModel"><br>
+  <input type="text" id="phone" name="phone" [(ngModel)]="friendModel._phoneNumber" #phoneNumber="ngModel"
+         required [class.invalid]="phoneNumber.invalid && phoneNumber.touched" pattern="[0-9/+ ]*"><br>
   <label for="language">Choose your favourite language:</label><br>
-  <select name="language" id="language" [(ngModel)]="friendModel._favouriteLanguage" #favLanguage="ngModel">
+  <select name="language" id="language" [(ngModel)]="friendModel._favouriteLanguage" #favLanguage="ngModel"
+          required [class.invalid]="favLanguage.invalid && favLanguage.touched">
     <optgroup label="You disappoint me">
       <option *ngFor="let language of language0" [value]="language">{{language}}</option>
     </optgroup>
