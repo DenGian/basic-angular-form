@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const {response} = require("express");
-const path = require("path");
+// const {response} = require("express");
+// const path = require("path");
 const app = express();
 
 const PORT = 9009;
@@ -17,7 +17,7 @@ app.all("/*", function(req, res, next){
 });
 
 
-let allFriends = [{fName: 'Coach', lName: 'Tim', email: 'tim.broos@becode.org', phone: '0469420666', signatureMove: 'Yeet', language: 'Javascript'}];
+let allFriends = [{_firstName: 'Coach', _lastName: 'Tim', _email: 'tim.broos@becode.org', _phoneNumber: '0469420666', signatureMove: 'Yeet', _favouriteLanguage: 'Javascript'}];
 
 // Below you can define how your API handles a get or a post request.
 // Try sending a get request to the root, you should get a "Hello from server" back.
@@ -34,11 +34,13 @@ app.post('/', function (request, response) {
     response.status(200).send({"message": "Data received"});
 });
 
-app.post('/addFriends', function (request, response){
-    response.status(200).send({allFriends})
+app.post('/addFriend', function (request, response){
+    allFriends.push(request.body);
+    response.status(200).send({"message": "Data received"});
 })
 
-app.listen(PORT, function () {});
+app.listen(PORT, function () {
+console.log('server is Gucci')});
 
 
 

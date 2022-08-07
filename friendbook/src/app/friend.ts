@@ -5,7 +5,6 @@ export class Friend {
   _phoneNumber: number | null
   _favouriteLanguage: string | null
 
-
   constructor(firstName: string | null, lastName: string | null, email: string | null, phoneNumber: number | null, favouriteLanguage: string | null) {
     this._firstName = firstName;
     this._lastName = lastName;
