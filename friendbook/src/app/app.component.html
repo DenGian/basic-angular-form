@@ -37,3 +37,8 @@
   </select><br>
   <button [disabled]="friendbookForm.form.invalid">Submit</button>
 </form>
+<div>
+  <ul>
+    <li *ngFor="let friend of allFriends"> {{friend._firstName}} </li>
+  </ul>
+</div>
