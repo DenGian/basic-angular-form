@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   language2: Array<string> = ['PHP', 'Java']
   language3: Array<string> = ['C/C++', 'ARM', 'Rust']
   friendModel = new Friend(null, null, null, null, null);
-  allFriends: Promise<any> | string = '';
+  allFriends: any | string = '';
 
   constructor(private addFriendService: AddFriendService) {
   }
